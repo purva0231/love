@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #fdfcfc, #f538a3); 
+
+}
+
+.wrapper{
+    position: relative;
+    width: 800px;
+    height: 550px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+
+}
+
+h1{
+    font-size: 3em;
+    color: #a62ae8;
+    /* margin: 15px 0; */
+    /* align-items: center;
+    align-content: center; */
+    margin-left: 150px;
+    margin-top: 20px;
+
+}
+
+h3{
+    font-size: 1.5em;
+    color: #f538a3;
+    margin-left: 280px;
+    margin-top: 5px;
+}
+
+p{
+    font-size: 1.5em;
+    color: plum;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.btn-group{
+    width: 60px;
+    height: 40px;
+    /* display: flex; */
+    /* justify-content: center; */
+   
+ 
+ 
+ }
+   button{
+    /* padding: auto;  */
+    /* margin: auto;  */
+    /* position: relative; */
+     width: 150px; 
+    margin-top: 20px;
+    margin-left: 310px;
+    height: inherit;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 2px solid #a62ae8;
+    outline: none;
+    cursor: pointer;
+
+    color: #f538a3;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    /* margin-top: 160px; */
+    /* margin-left: 10px; */
+    /* z-index: 10; */
+    /* padding: 10px;  */
+}
+    </style>
+
+</head>
+<body>
+<div class="wrapper">
+    <h1>HAPPY PROMISE DAY</h1>
+    <h3>COUPLE CONTRACT</h3>
+
+    <p>
+        I SHUBHAM PARTE SIGNED THIS CONTRACT BY READING ALL THE TERMS AND CONDTIONS. I AGGREE <br>
+        - TO TAKE CARE OF PURVA IN ANY SITUATION <br>
+        - TO NEVER LIE TO PURVA REGARDLESS OF ANYTHING <br>
+        - TO HELP HER IN HOUSEHOLD WORK <br>
+        - TO MAKE 1 DAY MEAL IN A WEEK FOR PURVA <br>
+        - TO SURPRISE HER WITH SMALL GIFT EVERY MONTH <br>
+        - TO BE WITH HER TILL LAST BREATH
+    
+    </p>
+
+    <div class="btn-group">
+        <button class="yes-btn">SIGNATURE</button>
+        
+    </div>
+</div>
+
+<script>
+    const yesBtn = document.querySelector('.yes-btn');
+
+    yesBtn.addEventListener('click', () => {
+// question.innerHTML = "I LOVE YOU TOO";
+    window.location.href = 'sign.html';
+
+});
+ </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valentine</title>
+
+    <style>
+        body {
+	
+            background: linear-gradient(45deg, #462a74, #f538a3); 
+	/* background-size:25px 25px; */
+    
+	font-family: 'Lato', sans-serif;
+}
+
+/*
+Valentine's Pen
+---- */
+
+.centered {
+	width: 100%;
+	margin: 30vh auto;
+	text-align: center;
+}
+
+.centered h4 {
+	color: #FFFFFF;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+ input[type=checkbox]{
+  display:none;
+ }
+
+label {
+	height: 40px;
+	width: auto;
+	padding: 10px 40px;
+	display: inline-block; 
+	cursor: pointer;
+	margin: 0 20px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	transition: all .25s ease-in-out;
+}
+
+label:hover {
+	transform: 	scale(1.1,1.1);
+}
+
+.no {
+	background-color: #D8124B;
+}
+
+.yes {
+	background-color: #12D890;
+}
+
+.answer--yes, .answer--no {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .5s ease-in-out;
+}
+
+.answer--yes {
+	background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDEyMjhrdGZmMG5jY2M5ZzQ1OHpzdzNuOHV0Y3ZubTJ4eWhqNTFwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9G0AdBbVrkV3O/giphy.gif');
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+
+.answer--no {
+	background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDh3cWdyeWJxZm5rcmdlNG1qNTljd2Q0MzloZHZkdWxma3h3N2x6eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Iowfz9G4P6ZiM/giphy.gif');
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+
+input.yes[type=checkbox]:checked ~ .answer--yes {
+  visibility: visible;
+	opacity: 100;
+}
+
+input.no[type=checkbox]:checked ~ .answer--no {
+  visibility: visible;
+	opacity: 100;
+}
+
+/*
+Signature
+---- */
+
+.signature {
+	position: absolute;
+	margin: auto;
+	bottom: 0;
+	top: auto;
+	width: 95%;
+}
+
+.signature p{
+	text-align: center;
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 0.85em;
+	color: #FFFFFF;
+}
+
+.signature .much-heart{
+	display: inline-block;
+	position: relative;
+	margin: 0 4px;
+	height: 10px;
+	width: 10px;
+	background: #D8124B;
+	border-radius: 4px;
+	-ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.signature .much-heart::before, 
+.signature .much-heart::after {
+	  display: block;
+  content: '';
+  position: absolute;
+  margin: auto;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #D8124B;
+  top: -4px;
+}
+
+.signature .much-heart::after {
+	bottom: 0;
+	top: auto;
+	left: -4px;
+}
+
+.signature a {
+	color: #D8124B;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.signature a:hover {
+	color: coral;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+button{
+    /* margin: auto; */
+    /* position: absolute; */
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+    height: inherit;
+	margin-left: 560px;
+    /* margin-top: 10px; */
+    font-size: 1.2em;
+	margin-bottom: 100px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid a62ae8;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+
+}
+
+    </style>
+</head>
+<body>
+
+    
+
+<div class="centered">
+        <h4>Will you be My Valentine?</h4>
+        <input type="checkbox" name="answer" id="No" class="no"> 
+    
+    <label class="no" for="No">Nope</label>
+	<input type="checkbox" name="answer" id="Yes" class="yes">
+
+	<label for="Yes" class="yes">Yup</label>
+	
+    <div class="answer--yes"></div>
+	<div class="answer--no"></div>
+
+</div>
+<div class="btn-group">
+	<button class="yes-btn">NEXT</button>
+	
+</div>
+
+<script>
+	const yesBtn = document.querySelector('.yes-btn');
+    
+	yesBtn.addEventListener('click', () => {
+// question.innerHTML = "I LOVE YOU TOO";
+	window.location.href = 'love.html';
+
+});
+
+</script>
+
+
+</body>
+</html>

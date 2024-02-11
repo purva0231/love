@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign</title>
+    <style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+
+body{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    background: linear-gradient(45deg, #fdfcfc, #f538a3); 
+
+}
+
+/* .wrapper{
+    position: relative;
+    width: 900px;
+    height: 550px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+} */
+        body {
+  height: 100vh;
+}
+
+canvas {  
+  background-color: #fff;
+  border-radius: 15px;
+  border: 5px solid black; 
+
+  
+}
+
+#canvas-wrap {
+  position: relative;
+ 
+}
+
+ #download, #clear {
+        position: relative;
+        top: 0;
+        left: 170px;
+        /* width: 150px; */
+        padding: 10px;
+        background-color: #57c4e5;
+        border: 3px solid black;
+        color: black;
+        display: block-inline;
+        margin-top: 5px;
+        margin-right:5px;
+        transition: .3s;
+        border-radius: 20px;
+      }
+
+#download:hover, #clear:hover {
+  background-color: transparent;
+}
+
+#text {
+  position:relative;
+  font-weight: bold;
+  left: 190px;
+}
+
+.btn-group{
+    width: 60px;
+    height: 40px;
+    /* display: flex; */
+    /* justify-content: center; */
+   
+ 
+ 
+ }
+   button{
+    /* padding: auto;  */
+    /* margin: auto;  */
+    /* position: relative; */
+     width: 100px; 
+    margin-top: 5px;
+    margin-left: 220px;
+    height: inherit;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 2px solid #a62ae8;
+    outline: none;
+    cursor: pointer;
+
+    color: #f538a3;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    /* margin-top: 160px; */
+    /* margin-left: 10px; */
+    /* z-index: 10; */
+    /* padding: 10px;  */
+}
+
+h3{
+    color: brown;
+    justify-content: center;
+    justify-items: center;
+    margin: 10px;
+    font-size: 30px;
+    margin-left: 200px;
+
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <h3>I SHUBHAM PARTE, FEEL HAPPY TO SIGN THE CONTRACT</h3>
+    <div id="canvas-wrap">
+        <canvas></canvas>   
+        <div id="buttons">
+               <div id="text">Please sign above</div>
+               <input type="button" id="download" value="Save as PNG"/>
+              <input type="button" id="clear" value="Clear">
+            </div>
+        </div>
+
+
+        <div class="btn-group">
+            <button class="yes-btn">NEXT</button>
+            
+        </div>
+    </div>
+        <script>
+            var canvas = document.querySelector('canvas');
+  canvas.style.position = 'relative';
+  canvas.style.top = "0";
+  canvas.style.left = "0";
+
+var ctx = canvas.getContext('2d');
+canvas.width = 500;
+canvas.height = 350;
+
+ctx.lineWidth = 3;
+ctx.lineJoin = ctx.lineCap = 'round';
+
+var isDrawing, drawLine;
+
+canvas.onmousedown = function(event) {
+  isDrawing = true;
+  drawLine = { x: event.clientX, y: event.clientY };
+};
+
+canvas.onmousemove = function(event) {
+  if (!isDrawing) return;
+
+  ctx.beginPath();
+  
+  ctx.moveTo(drawLine.x, drawLine.y);
+  ctx.lineTo(event.clientX, event.clientY);
+  ctx.stroke();
+     
+  drawLine = { x: event.clientX, y: event.clientY };
+};
+
+canvas.onmouseup = function() {
+  isDrawing = false;
+};
+
+document.getElementById('clear').addEventListener('click', function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }, false);
+
+window.onload = function(){
+var save = document.getElementById('download');
+
+ save.onclick = function(){
+    download(canvas, 'signature.png');
+  }
+
+}
+
+function download(canvas, filename) {
+  var lnk = document.createElement('a'), e;
+  lnk.download = filename;
+  lnk.href = canvas.toDataURL("image/png;base64");
+  
+  if (document.createEvent) {
+    e = document.createEvent("MouseEvents");
+    e.initMouseEvent("click", true, true, window,
+                     0, 0, 0, 0, 0, false, false, false,
+                     false, 0, null);
+
+    lnk.dispatchEvent(e);
+  } else if (lnk.fireEvent) {
+    lnk.fireEvent("onclick");
+  }
+}
+
+const yesBtn = document.querySelector('.yes-btn');
+
+    yesBtn.addEventListener('click', () => {
+// question.innerHTML = "I LOVE YOU TOO";
+    window.location.href = 'hug.html';
+
+});
+        </script>
+</body>
+</html>
